@@ -1,5 +1,5 @@
 import express from 'express'
-import {router} from './routes/routes'
+import {router} from './_routes/routes'
 import {operator} from './operator'
 //App Declaration
 const app: express.Application = express()

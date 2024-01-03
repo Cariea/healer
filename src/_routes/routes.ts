@@ -3,6 +3,9 @@ import { addCron } from '../actions/add'
 import { deleteCron } from '../actions/delete'
 import { getAll } from '../actions/get'
 
+import { schemaGuard } from '../middleware/schemaGuard'
+import { addSchema } from '../actions/add.schema'
+
 export const router = Router()
 
 router.get('/test', (req, res) => {
@@ -10,6 +13,6 @@ router.get('/test', (req, res) => {
 })
 
 router.get('/get', getAll)
-router.post('/add',addCron)
+router.post('/add', schemaGuard(addSchema), addCron)
 router.delete('/delete', deleteCron)
 export default router

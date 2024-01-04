@@ -9,6 +9,7 @@ import { addSchema } from '../actions/add.schema'
 export const router = Router()
 
 router.get('/test', (req: Request, res: Response) => {
+  console.log('test')
   res.status(200).json({ message: 'todo piola' })
 })
 

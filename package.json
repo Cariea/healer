@@ -24,5 +24,13 @@
     "express": "^4.18.2",
     "node-cron": "^3.0.3",
     "zod": "^3.22.4"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "project": "tsconfig.json"
+    },
+    "extends": [
+      "./node_modules/ts-standard/eslintrc.json"
+    ]
   }
 }

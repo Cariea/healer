@@ -1,4 +1,4 @@
-import { Router } from 'express'
+import { Router, Request, Response } from 'express'
 import { addCron } from '../actions/add'
 import { deleteCron } from '../actions/delete'
 import { getAll } from '../actions/get'
@@ -8,8 +8,8 @@ import { addSchema } from '../actions/add.schema'
 
 export const router = Router()
 
-router.get('/test', (req, res) => {
-    res.status(200).json({message: 'todo piola'})
+router.get('/test', (req: Request, res: Response) => {
+  res.status(200).json({ message: 'todo piola' })
 })
 
 router.get('/get', getAll)

@@ -3,7 +3,7 @@ import cron from 'node-cron'
 import { cronJobsJson } from './config/path'
 import fs from 'fs'
 import { CronJob } from './utils/manageDatabase'
-import { configs } from '../src/utils/consts'
+import { configs } from './utils/consts'
 
 export const operator = {
   config1: operatorF('1'),

@@ -3,11 +3,12 @@
 import express from 'express'
 import { router } from './_routes/routes'
 import { operator } from './operator'
+import { PORT } from './config'
 // App Declaration
 const app: express.Application = express()
 
 // Settings
-app.set('port', 3000)
+app.set('port', PORT)
 
 // Middlewares
 app.use(express.json())

@@ -4,6 +4,7 @@ import express from 'express'
 import { router } from './_routes/routes'
 import { operator } from './operator'
 import { PORT } from './config'
+import { validateFolder } from './utils/createFolder'
 // App Declaration
 const app: express.Application = express()
 
@@ -20,6 +21,6 @@ app.use('/', router)
 app.listen(app.get('port'), () => {
   console.log(`Server on port ${app.get('port')}`)
 })
-
+validateFolder()
 // Cron
 operator

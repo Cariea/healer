@@ -8,7 +8,6 @@ export const deleteCron = (req: Request, res: Response): any => {
     if (fs.existsSync(cronJobsJson)) {
       const currentDatabase = fs.readFileSync(cronJobsJson, 'utf-8')
       if (currentDatabase === '') {
-        console.log('No hay configuraciones para eliminar para la URL ')
         return res.status(404).json({ message: 'No hay configuraciones para eliminar para la URL ' })
       }
       const parsedDatabase: { cronJobs: CronJob[] } = JSON.parse(currentDatabase)

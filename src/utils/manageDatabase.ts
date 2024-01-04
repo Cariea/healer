@@ -9,7 +9,6 @@ export interface CronJob {
 export function manageDatabase (data: CronJob): CronJob[] {
   try {
     if (!fs.existsSync(cronJobsJson)) {
-      // Si el archivo no existe, crearlo y agregar la nueva data
       const jobs = {
         cronJobs: [data]
       }
@@ -18,13 +17,10 @@ export function manageDatabase (data: CronJob): CronJob[] {
         JSON.stringify(jobs),
         'utf-8'
       )
-
       return jobs.cronJobs
     } else {
       const currentDatabase = fs.readFileSync(cronJobsJson, 'utf-8')
-
       if (currentDatabase === '') {
-        // Si el archivo está vacío, inicializarlo con la nueva data
         const jobs = {
           cronJobs: [data]
         }
@@ -33,7 +29,6 @@ export function manageDatabase (data: CronJob): CronJob[] {
           JSON.stringify(jobs),
           'utf-8'
         )
-
         return jobs.cronJobs
       }
       const parsedDatabase: { cronJobs: CronJob[] } = JSON.parse(currentDatabase)

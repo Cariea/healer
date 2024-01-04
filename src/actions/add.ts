@@ -3,7 +3,6 @@ import { CronJob, manageDatabase } from '../utils/manageDatabase'
 export function addCron (req: Request, res: Response): void {
   try {
     const { url, config } = req.body
-
     const data: CronJob = {
       url,
       config
